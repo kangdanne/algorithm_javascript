@@ -28,6 +28,6 @@ function solution(x, n) {
 }
 
 /*
- * Array.prototype.fill() method
+ * Array.prototype.fill()
  * : changes all elements in an array to a static value, from a start index
  */
