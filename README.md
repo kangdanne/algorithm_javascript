@@ -2,9 +2,7 @@
 
 ![N|JS ES5](https://img.shields.io/badge/JavaScript_es5-yellow?style=flat-square&logo=JavaScript&logoColor=white) ![N|JS ES6](https://img.shields.io/badge/JavaScript_es6-yellow?style=flat-square&logo=JavaScript&logoColor=white)
 
----
-
-### BLOG👇
+## BLOG👇
 
 [Hello, Dan:D world - Algorithm](https://kangdanne.tistory.com/category/D.evelop/Algorithm)
 
