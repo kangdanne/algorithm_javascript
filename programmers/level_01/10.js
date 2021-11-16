@@ -34,7 +34,7 @@ function solution(n, m) {
 /**********************************
  * anothers result
  **********************************/
-// 유클리드 호제법과 재귀함수를 사용해 최대공약수를 구하는 로직
+// 유클리드 호제법과 재귀함수를 활용해 최대공약수를 구하는 로직
 function greatestCommonDivisor(a, b) {
   return b ? greatestCommonDivisor(b, a % b) : Math.abs(a);
 }
