@@ -34,8 +34,13 @@ function solution(n, m) {
 /**********************************
  * anothers result
  **********************************/
-function solution(n, m) {
-  var answer;
-  for (var nm = n * m; (answer = n % m); n = m, m = answer) {}
-  return [m, nm / m];
+// 유클리드 호제법과 재귀함수를 사용해 최대공약수를 구하는 로직
+function greatestCommonDivisor(a, b) {
+  return b ? greatestCommonDivisor(b, a % b) : Math.abs(a);
+}
+function leastCommonMultipleOfTwo(a, b) {
+  return (a * b) / greatestCommonDivisor(a, b);
+}
+function solution(a, b) {
+  return [greatestCommonDivisor(a, b), leastCommonMultipleOfTwo(a, b)];
 }
