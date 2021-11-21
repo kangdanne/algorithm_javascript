@@ -17,3 +17,13 @@ function solution(n) {
 /**********************************
  * anothers result
  **********************************/
+// 자료형의 변화 없이 구하는 방법
+function solution(n) {
+  var nums = [];
+  do {
+    nums.push(n % 10);
+    n = Math.floor(n / 10);
+  } while (n > 0);
+
+  return nums.sort((a, b) => b - a).join("") * 1;
+}
