@@ -20,3 +20,15 @@ function solution(s) {
   }
   return answer;
 }
+
+// my result refactoring
+function solution(s) {
+  return s * 1;
+}
+
+/**********************************
+ * anothers result
+ **********************************/
+function solution(s) {
+  return +s;
+}
