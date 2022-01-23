@@ -7,25 +7,47 @@
  * n이 1이면 각 단어의 인덱스 1의 문자 "u", "e", "a"로 strings를 정렬합니다.
  */
 
-// my result - ing
+// my result
 function solution(strings, n) {
   var answer = [];
-  var arr = [];
+  var magic = "";
 
-  for (let i = 0; i < strings.length; i++) {
-    answer.push(strings[i][n]);
+  for (var i = 0; i < strings.length; i++) {
+    magic = strings[i][n];
+    strings[i] = magic + strings[i];
   }
+  strings.sort();
+  console.log(strings);
 
-  answer.sort();
-  console.log(answer);
-
-  for (let i = 0; i < strings.length; i++) {
-    if (answer[i] === strings[i]) {
-      console.log(strings[i][n]);
-    }
-    arr.push();
+  for (var i = 0; i < strings.length; i++) {
+    strings[i] = strings[i].substr(1);
+    answer.push(strings[i]);
   }
-  console.log(arr);
-
   return answer;
+}
+
+/**********************************
+ * anothers result
+ **********************************/
+// localeCompare()를 이용한 방법
+function solution(strings, n) {
+  // strings 배열
+  // n 번째 문자열 비교
+  return strings.sort((s1, s2) =>
+    s1[n] === s2[n] ? s1.localeCompare(s2) : s1[n].localeCompare(s2[n])
+  );
+}
+
+// boolean을 이용한 방법
+function solution(strings, n) {
+  return strings.sort((a, b) => {
+    const chr1 = a.charAt(n);
+    const chr2 = b.charAt(n);
+
+    if (chr1 == chr2) {
+      return (a > b) - (a < b);
+    } else {
+      return (chr1 > chr2) - (chr1 < chr2);
+    }
+  });
 }
