@@ -17,7 +17,7 @@ return 하도록 solution 함수를 작성해주세요.
 
 // my result - non pass
 function solution(array, commands) {
-  var answer = [];
+  const answer = [];
   let num = 0;
   let length = 0;
   let index = 0;
@@ -27,10 +27,27 @@ function solution(array, commands) {
     length = commands[i][1];
     index = commands[i][2];
 
-    let sliceArr = array.slice(i - 1, length);
-    console.log(sliceArr);
-    answer.push(sliceArr[index - 1]);
+    let sliceArr = array.slice(num - 1, length);
+    let sortArr = sliceArr.sort((a, b) => a - b);
+    answer.push(sortArr[index - 1]);
   }
 
   return answer;
+}
+
+/**********************************
+ * anothers result
+ **********************************/
+// 구조분해 할당, map 함수
+function solution(array, commands) {
+  return commands.map((command) => {
+    const [sPosition, ePosition, position] = command;
+    const newArray = array
+      .filter(
+        (value, fIndex) => fIndex >= sPosition - 1 && fIndex <= ePosition - 1
+      )
+      .sort((a, b) => a - b);
+
+    return newArray[position - 1];
+  });
 }
