@@ -8,22 +8,19 @@ numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해�
 
 */
 
-// my result - non pass
+// my result - pass
 function solution(numbers) {
   var answer = [];
   for (let i = 0; i < numbers.length; i++) {
     for (let j = 0; j < numbers.length; j++) {
-      let num = numbers[i] + numbers[j];
-
-      if (!answer.includes(num)) {
-        answer.push(num);
+      if (i !== j) {
+        let num = numbers[i] + numbers[j];
+        if (!answer.includes(num)) {
+          answer.push(num);
+        }
       }
     }
   }
 
-  return answer.sort();
+  return answer.sort((a, b) => a - b);
 }
-
-/**********************************
- * anothers result
- **********************************/
