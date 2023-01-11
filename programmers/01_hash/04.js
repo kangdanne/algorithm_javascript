@@ -9,7 +9,13 @@ function solution(clothes) {
   var answer = 0;
   const item = {};
 
-  for (i = 0; i < clothes.length; i++) {}
+  let count = 1;
+
+  for (i = 0; i < clothes.length; i++) {
+    item[clothes[i][1]] = count;
+    count = +1;
+    console.log(item);
+  }
 
   return answer;
 }
